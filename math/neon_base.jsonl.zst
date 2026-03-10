@@ -1,1 +1,4 @@
-
+{"id":1,"events":[{"type":"spin","reels":["A","K","Q","J","10"]}],"payoutMultiplier":0}
+{"id":2,"events":[{"type":"spin","reels":["7","7","7","K","Q"]}],"payoutMultiplier":5}
+{"id":3,"events":[{"type":"spin","reels":["SC","SC","SC","J","10"]}],"payoutMultiplier":0}
+{"id":4,"events":[{"type":"spin","reels":["CROWN","CROWN","CROWN","CROWN","CROWN"]}],"payoutMultiplier":500}
