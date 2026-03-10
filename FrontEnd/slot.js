@@ -1,37 +1,37 @@
-const symbols=["🍒","🍋","🔔","💎","7️⃣","⭐"];
+const symbols=["🍒","🍋","🔔","💎","7️⃣","⭐"]
 
-const rows=3;
-const reels=5;
+const rows=3
+const reels=5
 
-const slot=document.getElementById("slot");
+const slot=document.getElementById("slot")
 
-let grid=[];
+let grid=[]
 
 function createGrid(){
 
 for(let r=0;r<rows;r++){
 
-grid[r]=[];
+grid[r]=[]
 
 for(let c=0;c<reels;c++){
 
-let cell=document.createElement("div");
+let cell=document.createElement("div")
 
-cell.className="cell";
+cell.className="cell"
 
-cell.innerHTML="?";
+cell.innerHTML="?"
 
-slot.appendChild(cell);
+slot.appendChild(cell)
 
-grid[r][c]=cell;
-
-}
+grid[r][c]=cell
 
 }
 
 }
 
-createGrid();
+}
+
+createGrid()
 
 function spin(){
 
@@ -43,14 +43,14 @@ for(let r=0;r<rows;r++){
 
 for(let c=0;c<reels;c++){
 
-let s=symbols[Math.floor(Math.random()*symbols.length)];
+let s=symbols[Math.floor(Math.random()*symbols.length)]
 
-grid[r][c].innerHTML=s;
-
-}
+grid[r][c].innerHTML=s
 
 }
 
-});
+}
+
+})
 
 }
