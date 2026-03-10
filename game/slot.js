@@ -1,14 +1,35 @@
-function spin() {
+const symbols = ["🍒","🍋","🔔","💎","7️⃣","👑"];
 
-const outcomes = [
-{symbols:["A","K","Q","J","10"], payout:0},
-{symbols:["7","7","7","7","7"], payout:50},
-{symbols:["CROWN","CROWN","CROWN","CROWN","CROWN"], payout:500}
-];
+function spin(){
 
-let result = outcomes[Math.floor(Math.random()*outcomes.length)];
+let reels = [];
 
-document.getElementById("result").innerHTML =
-result.symbols.join(" | ") + " → Win: " + result.payout + "x";
+for(let i=1;i<=5;i++){
+
+let s = symbols[Math.floor(Math.random()*symbols.length)];
+
+document.getElementById("r"+i).innerHTML = s;
+
+reels.push(s);
+
+}
+
+checkWin(reels);
+
+}
+
+function checkWin(reels){
+
+let win = reels.every(s => s === reels[0]);
+
+if(win){
+
+document.getElementById("result").innerHTML = "🎉 JACKPOT!";
+
+}else{
+
+document.getElementById("result").innerHTML = "Try Again";
+
+}
 
 }
