@@ -1,5 +1,5 @@
-# NEON ROYALE CLUB –Slot🎰 Game Description
-
+# NEON ROYALE CLUB –Slot🎰 Game
+# Description
 Step into the glowing nightlife of NEON ROYALE CLUB, a high-energy casino slot where luxury meets electrifying neon lights. Inspired by the atmosphere of exclusive VIP casinos and vibrant city nightlife, this game delivers an immersive experience filled with bright symbols, thrilling spins, and rewarding bonuses.
 
 Set on a 5-reel, 3-row layout with 20 paylines, players spin through a world of dazzling neon icons including crowns, roulette wheels, diamonds, premium casino chips, and classic lucky sevens. Every spin brings the excitement of the casino floor directly to the player.
