@@ -11,13 +11,13 @@ const symbols = [
 const rows = 3;
 const reels = 5;
 
-let grid=[];
-let balance=1000;
-let bet=10;
-let auto=false;
-let jackpot=50000;
+let grid = [];
+let balance = 1000;
+let bet = 10;
+let auto = false;
+let jackpot = 50000;
 
-const slot=document.getElementById("slot");
+const slot = document.getElementById("slot");
 
 function createGrid(){
 
@@ -77,7 +77,7 @@ for(let c=0;c<reels;c++){
 
 let s=symbols[Math.floor(Math.random()*symbols.length)];
 
-grid[r][c].innerHTML=s;
+grid[r][c].innerHTML="<img src='"+s+"' width='60'>";
 
 }
 
@@ -116,7 +116,7 @@ if(match) win=true;
 
 for(let r=0;r<rows;r++){
 for(let c=0;c<reels;c++){
-if(grid[r][c].innerHTML==="⭐") scatter++;
+if(grid[r][c].innerHTML.includes("star.png")) scatter++;
 }
 }
 
