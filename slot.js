@@ -1,4 +1,12 @@
-const symbols = ["🍒","🍋","🔔","💎","7️⃣","👑","⭐"];
+const symbols = [
+"assets/cherry.png",
+"assets/lemon.png",
+"assets/bell.png",
+"assets/diamond.png",
+"assets/seven.png",
+"assets/crown.png",
+"assets/star.png"
+];
 
 const rows = 3;
 const reels = 5;
