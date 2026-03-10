@@ -3,13 +3,13 @@
     {
       "name":"base",
       "cost":1.0,
-      "events":"neon_base.jsonl",
+      "events":"neon_base.jsonl.zst",
       "weights":"lookup_base.csv"
     },
     {
       "name":"bonus",
       "cost":100.0,
-      "events":"neon_bonus.jsonl",
+      "events":"neon_bonus.jsonl.zst",
       "weights":"lookup_bonus.csv"
     }
   ]
