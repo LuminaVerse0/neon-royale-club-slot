@@ -1,4 +1,8 @@
-{"id":1,"events":[{"type":"spin","reels":["A","K","Q","J","10"]}],"payoutMultiplier":0}
-{"id":2,"events":[{"type":"spin","reels":["7","7","7","K","Q"]}],"payoutMultiplier":5}
-{"id":3,"events":[{"type":"spin","reels":["SC","SC","SC","J","10"]}],"payoutMultiplier":0}
-{"id":4,"events":[{"type":"spin","reels":["CROWN","CROWN","CROWN","CROWN","CROWN"]}],"payoutMultiplier":500}
+{"id":1,"events":[{"type":"spin"}],"payoutMultiplier":0}
+{"id":2,"events":[{"type":"spin"}],"payoutMultiplier":2}
+{"id":3,"events":[{"type":"spin"}],"payoutMultiplier":5}
+{"id":4,"events":[{"type":"spin"}],"payoutMultiplier":10}
+{"id":5,"events":[{"type":"spin"}],"payoutMultiplier":20}
+{"id":6,"events":[{"type":"spin"}],"payoutMultiplier":50}
+{"id":7,"events":[{"type":"spin"}],"payoutMultiplier":100}
+{"id":8,"events":[{"type":"spin"}],"payoutMultiplier":500}
