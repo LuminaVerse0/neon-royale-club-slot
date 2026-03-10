@@ -3,77 +3,123 @@
 <head>
 <title>NEON ROYALE CLUB</title>
 
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <style>
 
 body{
 background:#000;
-color:#fff;
+color:white;
 text-align:center;
 font-family:Arial;
+margin:0;
 }
 
 h1{
-color:#ff004c;
+color:#ff0066;
+text-shadow:0 0 15px #ff0066;
+}
+
+#jackpot{
+color:gold;
+font-size:20px;
+margin-top:10px;
 }
 
 .slot{
-display:flex;
+display:grid;
+grid-template-columns:repeat(5,70px);
+grid-gap:5px;
 justify-content:center;
-margin-top:40px;
+margin-top:25px;
 }
 
-.reel{
-width:110px;
-height:110px;
-border:3px solid gold;
-margin:6px;
-font-size:45px;
+.cell{
+width:70px;
+height:70px;
+border:2px solid #ff0066;
+background:#111;
 display:flex;
 align-items:center;
 justify-content:center;
-background:#111;
-transition:transform 0.2s;
+font-size:32px;
+box-shadow:0 0 10px #ff0066 inset;
 }
 
-.spin{
-transform:rotateX(360deg);
+.controls{
+margin-top:20px;
 }
 
 button{
-margin-top:30px;
-padding:15px 40px;
-font-size:20px;
-background:#ff004c;
+padding:10px 20px;
+margin:5px;
+font-size:16px;
+background:#ff0066;
 color:white;
 border:none;
+border-radius:6px;
 cursor:pointer;
 }
 
 .win{
 color:gold;
-font-size:28px;
+font-size:26px;
+animation:flash 0.8s infinite;
+}
+
+@keyframes flash{
+0%{opacity:1;}
+50%{opacity:0.4;}
+100%{opacity:1;}
+}
+
+@media (max-width:600px){
+
+.slot{
+grid-template-columns:repeat(5,55px);
+}
+
+.cell{
+width:55px;
+height:55px;
+font-size:26px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <h1>🎰 NEON ROYALE CLUB</h1>
 
-<div class="slot">
-<div class="reel" id="r1">?</div>
-<div class="reel" id="r2">?</div>
-<div class="reel" id="r3">?</div>
-<div class="reel" id="r4">?</div>
-<div class="reel" id="r5">?</div>
-</div>
+<div id="jackpot">JACKPOT: 50,000</div>
+
+<h3 id="balance">Balance: 1000</h3>
+
+<div class="slot" id="slot"></div>
+
+<div class="controls">
+
+Bet:
+<button onclick="changeBet(-10)">-</button>
+<span id="bet">10</span>
+<button onclick="changeBet(10)">+</button>
+
+<br>
 
 <button onclick="spin()">SPIN</button>
+<button onclick="toggleAuto()">AUTO</button>
+
+</div>
 
 <h2 id="result"></h2>
 
-<audio id="spinSound" src="https://assets.mixkit.co/active_storage/sfx/2003/2003-preview.mp3"></audio>
+<audio id="spinSound"
+src="https://assets.mixkit.co/active_storage/sfx/2003/2003-preview.mp3">
+</audio>
 
 <script src="slot.js"></script>
 
