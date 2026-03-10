@@ -1,16 +1,16 @@
 {
-  "modes": [
+  "modes":[
     {
-      "name": "base",
-      "cost": 1.0,
-      "events": "neon_base.jsonl",
-      "weights": "lookup_base.csv"
+      "name":"base",
+      "cost":1.0,
+      "events":"neon_base.jsonl",
+      "weights":"lookup_base.csv"
     },
     {
-      "name": "bonus",
-      "cost": 100.0,
-      "events": "neon_bonus.jsonl",
-      "weights": "lookup_bonus.csv"
+      "name":"bonus",
+      "cost":100.0,
+      "events":"neon_bonus.jsonl",
+      "weights":"lookup_bonus.csv"
     }
   ]
 }
