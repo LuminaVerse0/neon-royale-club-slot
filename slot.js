@@ -1,51 +1,167 @@
-const symbols = ["🍒","🍋","🔔","💎","7️⃣","👑"];
+const symbols = ["🍒","🍋","🔔","💎","7️⃣","👑","⭐"];
+
+const rows = 3;
+const reels = 5;
+
+let grid=[];
+let balance=1000;
+let bet=10;
+let auto=false;
+let jackpot=50000;
+
+const slot=document.getElementById("slot");
+
+function createGrid(){
+
+slot.innerHTML="";
+
+for(let r=0;r<rows;r++){
+
+grid[r]=[];
+
+for(let c=0;c<reels;c++){
+
+let cell=document.createElement("div");
+
+cell.className="cell";
+
+cell.innerHTML="?";
+
+slot.appendChild(cell);
+
+grid[r][c]=cell;
+
+}
+
+}
+
+}
+
+createGrid();
+
+function changeBet(v){
+
+bet=Math.max(10,bet+v);
+
+document.getElementById("bet").innerHTML=bet;
+
+}
 
 function spin(){
 
+if(balance<bet){
+document.getElementById("result").innerHTML="No balance";
+return;
+}
+
+balance-=bet;
+
+jackpot+=bet;
+
+document.getElementById("balance").innerHTML="Balance: "+balance;
+document.getElementById("jackpot").innerHTML="JACKPOT: "+jackpot;
+
 document.getElementById("spinSound").play();
 
-let reels = [];
+for(let r=0;r<rows;r++){
 
-for(let i=1;i<=5;i++){
+for(let c=0;c<reels;c++){
 
-let reel = document.getElementById("r"+i);
+let s=symbols[Math.floor(Math.random()*symbols.length)];
 
-reel.classList.add("spin");
-
-setTimeout(()=>{
-
-let s = symbols[Math.floor(Math.random()*symbols.length)];
-
-reel.innerHTML = s;
-
-reel.classList.remove("spin");
-
-reels.push(s);
-
-if(reels.length === 5){
-checkWin(reels);
-}
-
-}, i*300);
+grid[r][c].innerHTML=s;
 
 }
 
 }
 
-function checkWin(reels){
+checkWin();
 
-let win = reels.every(s => s === reels[0]);
+if(auto){
+setTimeout(spin,900);
+}
+
+}
+
+function checkWin(){
+
+let win=false;
+let scatter=0;
+
+for(let r=0;r<rows;r++){
+
+let first=grid[r][0].innerHTML;
+
+let match=true;
+
+for(let c=1;c<reels;c++){
+
+if(grid[r][c].innerHTML!==first){
+match=false;
+}
+
+}
+
+if(match) win=true;
+
+}
+
+for(let r=0;r<rows;r++){
+for(let c=0;c<reels;c++){
+if(grid[r][c].innerHTML==="⭐") scatter++;
+}
+}
+
+if(scatter>=3){
+
+let bonus=bet*10;
+
+balance+=bonus;
+
+document.getElementById("result").innerHTML="⭐ BONUS WIN "+bonus;
+
+document.getElementById("balance").innerHTML="Balance: "+balance;
+
+return;
+
+}
 
 if(win){
 
-document.getElementById("result").innerHTML = "🎉 JACKPOT!";
-document.getElementById("result").className = "win";
+let prize=bet*5;
+
+balance+=prize;
+
+document.getElementById("balance").innerHTML="Balance: "+balance;
+
+document.getElementById("result").innerHTML="🎉 BIG WIN "+prize;
+
+document.getElementById("result").className="win";
 
 }else{
 
-document.getElementById("result").innerHTML = "Try Again";
-document.getElementById("result").className = "";
+document.getElementById("result").innerHTML="Try Again";
+
+document.getElementById("result").className="";
 
 }
+
+if(Math.random()<0.0005){
+
+balance+=jackpot;
+
+document.getElementById("result").innerHTML="💰 JACKPOT "+jackpot;
+
+jackpot=50000;
+
+}
+
+}
+
+function toggleAuto(){
+
+auto=!auto;
+
+if(auto) spin();
 
 }
